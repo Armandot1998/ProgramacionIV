@@ -1,0 +1,49 @@
+<h3>Buscar por el Identificador</h3>
+<div style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <input type="text" class="form-control" id="id" required [(ngModel)]="id" name="id">
+    </div>
+
+    <div class="btn-group">
+      <button type="submit" class="btn btn-success">Buscar</button>
+    </div>
+  </form>
+</div>
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Productos</h4>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                                  <th>ID </th>
+                                  <th>Nombre</th>
+                                  <th>Fecha de Creación</th>
+                                  <th>Fecha de Modificación </th>
+                                  <th>Estado</th>
+                                  <th>Categoría</th>
+                              </thead>
+                              <tbody *ngFor="let p of products">
+                                  <tr>
+                                      <td>{{p.id}} </td>
+                                      <td>{{p.name}}</td>
+                                      <td> {{p.created_at}} </td>
+                                      <td>{{p.updated_at}} </td>
+                                      <td>{{p.isactive}} </td>
+                                      <td>{{p.category_id}} </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
